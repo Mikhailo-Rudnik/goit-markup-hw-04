@@ -137,6 +137,26 @@ button {
   color: var(--acctnt-color);
 }
 
+.mail::before {
+  display: inline-flex;
+  content: '';
+  width: 16px;
+  height: 12px;
+  margin-right: 10px;
+  background-image: url(../images/post.svg);
+  background-size: contain;
+}
+
+.tel::before {
+  display: inline-flex;
+  content: '';
+  width: 10px;
+  height: 16px;
+  margin-right: 10px;
+  background-image: url(../images/phone.svg);
+  background-size: contain;
+}
+
 .mail,
 .tel {
   display: block;
@@ -373,6 +393,7 @@ button {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
+  letter-spacing: inherit;
 }
 
 .button.current,
