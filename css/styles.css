@@ -10,6 +10,8 @@
   --team-bcg-color: #f5f4fa;
   --footer-contacts-color: rgba(255, 255, 255, 0.6);
   --border: #eeeeee;
+  --soc-color: #afb1b8;
+  --bcg-soc-footer: rgba(255, 255, 255, 0.1);
 }
 
 body {
@@ -69,6 +71,7 @@ button {
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
+  outline: 2px solid tomato;
 }
 
 /* header */
@@ -137,26 +140,6 @@ button {
   color: var(--acctnt-color);
 }
 
-.mail::before {
-  display: inline-flex;
-  content: '';
-  width: 16px;
-  height: 12px;
-  margin-right: 10px;
-  background-image: url(../images/post.svg);
-  background-size: contain;
-}
-
-.tel::before {
-  display: inline-flex;
-  content: '';
-  width: 10px;
-  height: 16px;
-  margin-right: 10px;
-  background-image: url(../images/phone.svg);
-  background-size: contain;
-}
-
 .mail,
 .tel {
   display: block;
@@ -167,6 +150,16 @@ button {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
+}
+
+.mail-icon {
+  margin-right: 10px;
+  fill: currentColor;
+}
+
+.tel-icon {
+  margin-right: 10px;
+  fill: currentColor;
 }
 
 /* Герой */
@@ -245,6 +238,17 @@ button {
   gap: 30px;
 }
 
+.features-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 270px;
+  height: 120px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  background-color: var(--team-bcg-color);
+}
+
 .features-title {
   margin-bottom: 10px;
 
@@ -265,7 +269,7 @@ button {
   padding-top: 0;
 }
 
-.work-title {
+.title {
   margin-bottom: 50px;
 
   font-weight: 700;
@@ -282,15 +286,6 @@ button {
 /* Команда */
 .team {
   background-color: var(--team-bcg-color);
-}
-
-.team-title {
-  margin-bottom: 50px;
-
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
-  text-align: center;
 }
 
 .team-list {
@@ -318,10 +313,75 @@ button {
 }
 
 .team-job {
+  margin-bottom: 16px;
+
   color: var(--contacts-features-text-color);
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
+}
+
+.team-soc-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.team-soc-item {
+  width: 44px;
+  height: 44px;
+}
+
+.team-soc-link {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--soc-color);
+}
+
+.team-soc-icon {
+  fill: currentColor;
+}
+
+.team-soc-link:hover,
+.team-soc-link:focus {
+  background-color: var(--acctnt-color);
+  color: var(--hero-studio-footer-text-color);
+}
+
+/* ---------НАШІ КЛІЄНТИ--------- */
+
+.clients-list {
+  display: flex;
+  gap: 30px;
+}
+
+.clients-item {
+  width: calc((100% - 150px) / 6);
+  height: 92px;
+}
+.clients-link {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--soc-color);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--soc-color);
+}
+
+.clients-icon {
+  fill: currentColor;
+}
+
+.clients-link:hover,
+.clients-link:focus {
+  color: var(--acctnt-color);
+  border: 1px solid var(--acctnt-color);
 }
 
 /* Footer */
@@ -331,6 +391,12 @@ button {
   padding-bottom: 60px;
 
   background-color: var(--hero-bcg-color-footer);
+}
+
+.footer-cotainer {
+  display: flex;
+  gap: 70px;
+  align-items: baseline;
 }
 
 .footer-logo {
@@ -375,6 +441,45 @@ button {
   color: var(--acctnt-color);
 }
 
+.subscribe {
+  color: var(--hero-studio-footer-text-color);
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.footer-soc-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.footer-soc-item {
+  width: 44px;
+  height: 44px;
+}
+
+.footer-soc-link {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bcg-soc-footer);
+  color: var(--hero-studio-footer-text-color);
+}
+
+.footer-soc-icon {
+  fill: currentColor;
+}
+
+.footer-soc-link:hover,
+.footer-soc--link:focus {
+  background-color: var(--acctnt-color);
+}
+
 /* ПОРТФОЛІО */
 
 .button-list {
@@ -401,6 +506,8 @@ button {
 .button:focus {
   background-color: var(--acctnt-color);
   color: var(--hero-studio-footer-text-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .working-list {
